@@ -7,12 +7,12 @@ items = []
 @dataclass
 class Item:
     text: str
-    date: datetime
+    date: datetime.date
     isCompleted: bool = False
 
 
 def oneWeekFromToday():
-    today = datetime.datetime.now()
+    today = datetime.datetime.now().date()
     oneWeek = datetime.timedelta(weeks=1)
     return today + oneWeek
 
@@ -23,7 +23,7 @@ def add(text, date=None):
     if date is None:
         date = oneWeekFromToday()
     else:
-        date = datetime.datetime.strptime(date, '%Y-%m-%d')
+        date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
     items.append(Item(text, date))
 
 
