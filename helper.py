@@ -4,8 +4,7 @@ import operator
 
 
 items = []
-
-
+#kommentar von Gabriel
 @dataclass
 class Item:
     text: str
